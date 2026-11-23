@@ -1,37 +1,143 @@
 {
-  "nombre": "escenario_base",
-  "descripcion": "Arthrospira platensis PCC 8005 con LED rojo de 626 nm. Conjunto con origen unico (Farges et al., 2009) y dato de validacion asociado.",
-  "luz": {
-    "Ea": {"valor": 225.0, "unidad": "m2 kg-1", "fuente": "Farges et al. 2009, Biotechnol. Prog. 25:151 (tabla 3, LED 626 nm)", "estado": "literatura"},
-    "Es": {"valor": 609.0, "unidad": "m2 kg-1", "fuente": "Farges et al. 2009 (tabla 3, LED 626 nm)", "estado": "literatura"},
-    "b": {"valor": 0.033, "unidad": "adimensional", "fuente": "Farges et al. 2009 (tabla 3, LED 626 nm)", "estado": "literatura"},
-    "k_extincion": {"valor": 244.3, "unidad": "m2 kg-1", "fuente": "sqrt(Ea*(Ea+2*b*Es)), formula de dos flujos usada en Poughon et al. 2021", "estado": "derivado"},
-    "i_comp": {"valor": 4.5, "unidad": "umol m-2 s-1", "fuente": "Lobaton y Lopez 2021 (A. platensis N-39, columna de burbujas, 30 C)", "estado": "provisional"},
-    "i_inhibicion": {"valor": 150.0, "unidad": "umol m-2 s-1", "fuente": "Rango 150-200 atribuido a Vonshak por un estudio de fotobiorreactor helicoidal (ProQuest 2636123307). No confirmado en el texto original de Vonshak y Guy (1992), Plant Cell Environ. 15:613", "estado": "provisional"}
-  },
-  "crecimiento": {
-    "rho_M": {"valor": 0.8, "unidad": "adimensional", "fuente": "Farges et al. 2009 (rendimiento energetico maximo)", "estado": "literatura"},
-    "K": {"valor": 90.0, "unidad": "umol m-2 s-1", "fuente": "Farges et al. 2009 (semisaturacion para A. platensis)", "estado": "literatura"},
-    "phi": {"valor": 1.85e-9, "unidad": "kg umol-1", "fuente": "Farges et al. 2009 (rendimiento cuantico masico)", "estado": "literatura"},
-    "T_opt": {"valor": 34.7, "unidad": "C", "fuente": "Poughon et al. 2021 (ec. 11, tomada de Cornet et al. 1998)", "estado": "literatura"},
-    "fT_A": {"valor": 1.95e14, "unidad": "adimensional", "fuente": "Poughon et al. 2021, ec. 11", "estado": "literatura"},
-    "fT_E1": {"valor": 8.3e4, "unidad": "J mol-1", "fuente": "Poughon et al. 2021, ec. 11", "estado": "literatura"},
-    "fT_B": {"valor": 2.71e36, "unidad": "adimensional", "fuente": "Poughon et al. 2021, ec. 11", "estado": "literatura"},
-    "fT_E2": {"valor": 2.16e5, "unidad": "J mol-1", "fuente": "Poughon et al. 2021, ec. 11", "estado": "literatura"},
-    "pH_optimo": {"valor": 9.0, "unidad": "adimensional", "fuente": "Poughon et al. 2021 (optimo 9 +/- 1)", "estado": "literatura"}
-  },
-  "carbono": {
-    "masa_c_molar_biomasa": {"valor": 0.0237, "unidad": "kg mol-1", "fuente": "Farges et al. 2009", "estado": "literatura"},
-    "fraccion_carbono_biomasa": {"valor": 0.506, "unidad": "g C g-1", "fuente": "12.011 / 23.74, de la formula CH1.575O0.459N0.173S0.006P0.006 (Farges et al. 2009)", "estado": "derivado"},
-    "K_TIC": {"valor": 1e-3, "unidad": "mol C L-1", "fuente": "Poughon et al. 2021 (los autores advierten que es dificil obtener valores confiables)", "estado": "provisional"}
-  },
-  "energia": {
-    "eficacia_led": {"valor": 0.90, "unidad": "umol J-1", "fuente": "Farges et al. 2009 (LED rojo 626 nm, tecnologia de 2009)", "estado": "provisional"},
-    "conversion_par": {"valor": 4.6, "unidad": "umol J-1", "fuente": "Farges et al. 2009 (fotones PAR por vatio radiante)", "estado": "literatura"}
-  },
-  "pendientes": [
-    "potencia de mezclado: relacion con transferencia de gases y perdida de CO2",
-    "eficacia de LED actuales (verificar si 0.90 umol/J es conservador)",
-    "constante de saturacion de carbono validada para este medio"
-  ]
+    "nombre": "escenario_base",
+    "descripcion": "Arthrospira platensis PCC 8005 con LED rojo de 626 nm. Conjunto con origen unico (Farges et al., 2009) y dato de validacion asociado.",
+    "luz": {
+        "Ea": {
+            "valor": 225.0,
+            "unidad": "m2 kg-1",
+            "fuente": "Farges et al. 2009, Biotechnol. Prog. 25:151 (tabla 3, LED 626 nm)",
+            "estado": "literatura"
+        },
+        "Es": {
+            "valor": 609.0,
+            "unidad": "m2 kg-1",
+            "fuente": "Farges et al. 2009 (tabla 3, LED 626 nm)",
+            "estado": "literatura"
+        },
+        "b": {
+            "valor": 0.033,
+            "unidad": "adimensional",
+            "fuente": "Farges et al. 2009 (tabla 3, LED 626 nm)",
+            "estado": "literatura"
+        },
+        "k_extincion": {
+            "valor": 244.3,
+            "unidad": "m2 kg-1",
+            "fuente": "sqrt(Ea*(Ea+2*b*Es)), formula de dos flujos usada en Poughon et al. 2021",
+            "estado": "derivado"
+        },
+        "i_comp": {
+            "valor": 4.5,
+            "unidad": "umol m-2 s-1",
+            "fuente": "Lobaton y Lopez 2021 (A. platensis N-39, columna de burbujas, 30 C)",
+            "estado": "provisional"
+        },
+        "i_inhibicion": {
+            "valor": 150.0,
+            "unidad": "umol m-2 s-1",
+            "fuente": "Rango 150-200 atribuido a Vonshak por un estudio de fotobiorreactor helicoidal (ProQuest 2636123307). No confirmado en el texto original de Vonshak y Guy (1992), Plant Cell Environ. 15:613",
+            "estado": "provisional"
+        }
+    },
+    "crecimiento": {
+        "rho_M": {
+            "valor": 0.8,
+            "unidad": "adimensional",
+            "fuente": "Farges et al. 2009 (rendimiento energetico maximo)",
+            "estado": "literatura"
+        },
+        "K": {
+            "valor": 90.0,
+            "unidad": "umol m-2 s-1",
+            "fuente": "Farges et al. 2009 (semisaturacion para A. platensis)",
+            "estado": "literatura"
+        },
+        "phi": {
+            "valor": 1.85e-9,
+            "unidad": "kg umol-1",
+            "fuente": "Farges et al. 2009 (rendimiento cuantico masico)",
+            "estado": "literatura"
+        },
+        "T_opt": {
+            "valor": 34.7,
+            "unidad": "C",
+            "fuente": "Poughon et al. 2021 (ec. 11, tomada de Cornet et al. 1998)",
+            "estado": "literatura"
+        },
+        "fT_A": {
+            "valor": 1.95e14,
+            "unidad": "adimensional",
+            "fuente": "Poughon et al. 2021, ec. 11",
+            "estado": "literatura"
+        },
+        "fT_E1": {
+            "valor": 8.3e4,
+            "unidad": "J mol-1",
+            "fuente": "Poughon et al. 2021, ec. 11",
+            "estado": "literatura"
+        },
+        "fT_B": {
+            "valor": 2.71e36,
+            "unidad": "adimensional",
+            "fuente": "Poughon et al. 2021, ec. 11",
+            "estado": "literatura"
+        },
+        "fT_E2": {
+            "valor": 2.16e5,
+            "unidad": "J mol-1",
+            "fuente": "Poughon et al. 2021, ec. 11",
+            "estado": "literatura"
+        },
+        "pH_optimo": {
+            "valor": 9.0,
+            "unidad": "adimensional",
+            "fuente": "Poughon et al. 2021 (optimo 9 +/- 1)",
+            "estado": "literatura"
+        }
+    },
+    "carbono": {
+        "masa_c_molar_biomasa": {
+            "valor": 0.0237,
+            "unidad": "kg mol-1",
+            "fuente": "Farges et al. 2009",
+            "estado": "literatura"
+        },
+        "fraccion_carbono_biomasa": {
+            "valor": 0.506,
+            "unidad": "g C g-1",
+            "fuente": "12.011 / 23.74, de la formula CH1.575O0.459N0.173S0.006P0.006 (Farges et al. 2009)",
+            "estado": "derivado"
+        },
+        "K_TIC": {
+            "valor": 1e-3,
+            "unidad": "mol C L-1",
+            "fuente": "Poughon et al. 2021 (los autores advierten que es dificil obtener valores confiables)",
+            "estado": "provisional"
+        }
+    },
+    "energia": {
+        "eficacia_led": {
+            "valor": 2.5,
+            "unidad": "umol J-1",
+            "fuente": "Runkle 2022, A Closer Look at LED Efficacy (MSU Extension / Greenhouse Product News): en 2022 mas de la mitad de los productos LED horticolas calificados tenian 2.5 o mas, con rango 1.81-3.69. Contrastado con Horticulture Research s41438-020-0283-7 (limite teorico 3.4-4.1) y guia de Vermont (minimo 1.9)",
+            "estado": "literatura"
+        },
+        "acople_optico": {
+            "valor": 1.0,
+            "unidad": "adimensional",
+            "fuente": "Supuesto de diseno: toda la luz emitida llega al cultivo. En el montaje de Farges 2009 se estima 0.3-0.4 (calculo propio, depende del area considerada)",
+            "estado": "provisional"
+        },
+        "conversion_par": {
+            "valor": 4.6,
+            "unidad": "umol J-1",
+            "fuente": "Farges et al. 2009 (fotones PAR por vatio radiante)",
+            "estado": "literatura"
+        }
+    },
+    "pendientes": [
+        "potencia de mezclado: relacion con transferencia de gases y perdida de CO2",
+        "constante de saturacion de carbono validada para este medio",
+        "acople optico real segun la geometria del reactor (hoy supuesto 1.0)"
+    ]
 }

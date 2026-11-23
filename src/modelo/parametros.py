@@ -16,7 +16,7 @@ REQUERIDOS = {
     "crecimiento": ["rho_M", "K", "phi", "T_opt", "fT_A", "fT_E1", "fT_B",
                     "fT_E2", "pH_optimo"],
     "carbono": ["masa_c_molar_biomasa", "fraccion_carbono_biomasa", "K_TIC"],
-    "energia": ["eficacia_led", "conversion_par"],
+    "energia": ["eficacia_led", "conversion_par", "acople_optico"],
 }
 
 

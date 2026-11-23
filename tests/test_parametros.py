@@ -104,3 +104,12 @@ def test_referencia_tiene_los_casos_de_validacion():
     f = ref["farges_2009_continuo"]
     assert f["productividad"]["valor"] * f["tiempo_residencia"]["valor"] == pytest.approx(
         f["biomasa_salida"]["valor"], rel=0.05)
+    
+
+def test_eficacia_led_dentro_de_los_limites_fisicos(escenario):
+    # Mínimo DLC ~1.9 y límite teórico de lámparas con LED ~4.1 µmol/J
+    assert 1.0 <= valor(escenario, "energia", "eficacia_led") <= 4.1
+
+
+def test_acople_optico_entre_cero_y_uno(escenario):
+    assert 0 < valor(escenario, "energia", "acople_optico") <= 1.0

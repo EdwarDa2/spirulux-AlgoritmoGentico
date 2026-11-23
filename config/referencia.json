@@ -1,21 +1,66 @@
 {
-  "descripcion": "Datos publicados para validar el simulador. Cada caso se reproduce con el simulador y se compara.",
-  "farges_2009_continuo": {
-    "fuente": "Farges et al. 2009, Biotechnol. Prog. 25:151 (cultivo continuo, LED rojo 626 nm)",
-    "q_incidente": {"valor": 135.0, "unidad": "umol m-2 s-1"},
-    "espesor": {"valor": 0.04, "unidad": "m"},
-    "tiempo_residencia": {"valor": 62.5, "unidad": "h"},
-    "temperatura": {"valor": 36.0, "unidad": "C"},
-    "pH": {"valor": 9.5, "unidad": "adimensional"},
-    "biomasa_salida": {"valor": 0.7, "unidad": "g L-1"},
-    "productividad": {"valor": 0.011, "unidad": "g L-1 h-1"}
-  },
-  "reactor_casero_10L": {
-    "fuente": "Attasat y Chaiklahan 2026, resumen de congreso (3rd Int. Conf. Biodiversity, Science and Technology, p. 48). Verificado en https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1561873872",
-    "condiciones": "Luz continua 24 h, PPFD 480 umol m-2 s-1, dilucion 0.34 d-1, temperatura ambiente",
-    "volumen": {"valor": 10.0, "unidad": "L"},
-    "potencia_led": {"valor": 36.0, "unidad": "W"},
-    "productividad": {"valor": 0.12, "unidad": "g L-1 d-1"},
-    "eficiencia_energetica": {"valor": 1.55, "unidad": "g kWh-1"}
-  }
+    "descripcion": "Datos publicados para validar el simulador. Cada caso se reproduce con el simulador y se compara.",
+    "farges_2009_continuo": {
+        "fuente": "Farges et al. 2009, Biotechnol. Prog. 25:151 (cultivo continuo, LED rojo 626 nm)",
+        "q_incidente": {
+            "valor": 135.0,
+            "unidad": "umol m-2 s-1"
+        },
+        "espesor": {
+            "valor": 0.04,
+            "unidad": "m"
+        },
+        "tiempo_residencia": {
+            "valor": 62.5,
+            "unidad": "h"
+        },
+        "temperatura": {
+            "valor": 36.0,
+            "unidad": "C"
+        },
+        "pH": {
+            "valor": 9.5,
+            "unidad": "adimensional"
+        },
+        "biomasa_salida": {
+            "valor": 0.7,
+            "unidad": "g L-1"
+        },
+        "productividad": {
+            "valor": 0.011,
+            "unidad": "g L-1 h-1"
+        }
+    },
+    "reactor_casero_10L": {
+        "fuente": "Attasat y Chaiklahan 2026, resumen de congreso (3rd Int. Conf. Biodiversity, Science and Technology, p. 48). Verificado en https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1561873872",
+        "condiciones": "Luz continua 24 h, PPFD 480 umol m-2 s-1, dilucion 0.34 d-1, temperatura ambiente",
+        "ppfd": {
+            "valor": 480.0,
+            "unidad": "umol m-2 s-1"
+        },
+        "biomasa_diaria": {
+            "valor": 1.34,
+            "unidad": "g d-1"
+        },
+        "consumo_especifico": {
+            "valor": 0.645,
+            "unidad": "kWh g-1"
+        },
+        "volumen": {
+            "valor": 10.0,
+            "unidad": "L"
+        },
+        "potencia_led": {
+            "valor": 36.0,
+            "unidad": "W"
+        },
+        "productividad": {
+            "valor": 0.12,
+            "unidad": "g L-1 d-1"
+        },
+        "eficiencia_energetica": {
+            "valor": 1.55,
+            "unidad": "g kWh-1"
+        }
+    }
 }

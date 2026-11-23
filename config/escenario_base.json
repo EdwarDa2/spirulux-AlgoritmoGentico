@@ -7,7 +7,7 @@
     "b": {"valor": 0.033, "unidad": "adimensional", "fuente": "Farges et al. 2009 (tabla 3, LED 626 nm)", "estado": "literatura"},
     "k_extincion": {"valor": 244.3, "unidad": "m2 kg-1", "fuente": "sqrt(Ea*(Ea+2*b*Es)), formula de dos flujos usada en Poughon et al. 2021", "estado": "derivado"},
     "i_comp": {"valor": 4.5, "unidad": "umol m-2 s-1", "fuente": "Lobaton y Lopez 2021 (A. platensis N-39, columna de burbujas, 30 C)", "estado": "provisional"},
-    "i_inhibicion": {"valor": 150.0, "unidad": "umol m-2 s-1", "fuente": "Vonshak, rango 150-200, citado en estudio de fotobiorreactor helicoidal (ProQuest 2636123307)", "estado": "literatura"}
+    "i_inhibicion": {"valor": 150.0, "unidad": "umol m-2 s-1", "fuente": "Rango 150-200 atribuido a Vonshak por un estudio de fotobiorreactor helicoidal (ProQuest 2636123307). No confirmado en el texto original de Vonshak y Guy (1992), Plant Cell Environ. 15:613", "estado": "provisional"}
   },
   "crecimiento": {
     "rho_M": {"valor": 0.8, "unidad": "adimensional", "fuente": "Farges et al. 2009 (rendimiento energetico maximo)", "estado": "literatura"},

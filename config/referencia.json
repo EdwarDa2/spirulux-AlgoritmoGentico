@@ -11,7 +11,8 @@
     "productividad": {"valor": 0.011, "unidad": "g L-1 h-1"}
   },
   "reactor_casero_10L": {
-    "fuente": "Fotobiorreactor casero de 10 L (Attasat y Chaiklahan, 2026)",
+    "fuente": "Attasat y Chaiklahan 2026, resumen de congreso (3rd Int. Conf. Biodiversity, Science and Technology, p. 48). Verificado en https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1561873872",
+    "condiciones": "Luz continua 24 h, PPFD 480 umol m-2 s-1, dilucion 0.34 d-1, temperatura ambiente",
     "volumen": {"valor": 10.0, "unidad": "L"},
     "potencia_led": {"valor": 36.0, "unidad": "W"},
     "productividad": {"valor": 0.12, "unidad": "g L-1 d-1"},

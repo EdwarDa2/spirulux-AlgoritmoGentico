@@ -1,0 +1,20 @@
+{
+  "descripcion": "Datos publicados para validar el simulador. Cada caso se reproduce con el simulador y se compara.",
+  "farges_2009_continuo": {
+    "fuente": "Farges et al. 2009, Biotechnol. Prog. 25:151 (cultivo continuo, LED rojo 626 nm)",
+    "q_incidente": {"valor": 135.0, "unidad": "umol m-2 s-1"},
+    "espesor": {"valor": 0.04, "unidad": "m"},
+    "tiempo_residencia": {"valor": 62.5, "unidad": "h"},
+    "temperatura": {"valor": 36.0, "unidad": "C"},
+    "pH": {"valor": 9.5, "unidad": "adimensional"},
+    "biomasa_salida": {"valor": 0.7, "unidad": "g L-1"},
+    "productividad": {"valor": 0.011, "unidad": "g L-1 h-1"}
+  },
+  "reactor_casero_10L": {
+    "fuente": "Fotobiorreactor casero de 10 L (Attasat y Chaiklahan, 2026)",
+    "volumen": {"valor": 10.0, "unidad": "L"},
+    "potencia_led": {"valor": 36.0, "unidad": "W"},
+    "productividad": {"valor": 0.12, "unidad": "g L-1 d-1"},
+    "eficiencia_energetica": {"valor": 1.55, "unidad": "g kWh-1"}
+  }
+}

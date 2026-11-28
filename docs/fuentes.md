@@ -13,3 +13,8 @@ Fecha de consulta de todas las fuentes: 2026-11-22.
 | F7 | Revisión sobre eficacia de LED, Horticulture Research (DOI s41438-020-0283-7) | https://www.nature.com/articles/s41438-020-0283-7 | Límites teóricos 3.4-4.1 µmol/J | Extractos | Consistente con F6 | Confiable |
 | F8 | Guía de eficiencia energética, Vermont (ccb.vermont.gov) | https://ccb.vermont.gov/sites/ccb/files/2023-08/Energy.Efficiency.Guidance_FINAL.pdf | Mínimo 1.9 µmol/J en cultivo interior | Extractos | Consistente con F6 | Confiable |
 | F9 | Cálculo propio sobre datos de F1 | (ver F1, tabla 1 y apéndice) | Acople óptico de Farges: 0.33-0.41 | Cálculo | 180 LED × 20 mA × 1.9 V = 6.84 W; 0.90 µmol/J × 6.84 W = 6.16 µmol/s emitidos contra 2.0-2.6 µmol/s entregados | Estimación (depende del área) |
+| F10 | Kishi et al. 2020, Applied Sciences 10(1):228 | https://www.mdpi.com/2076-3417/10/1/228 | pK1, pK2, Hcp, medio SOT (DIC 0.27, alcalinidad 0.485), cifras para validar el pH | Texto completo | El modelo de pH reproduce sus cifras: con ΔDIC de 0 a 0.17 el pH va de 10.39 a 8.87 (reportan 10.4 a 8.9). El CO₂ de equilibrio cruza el nivel atmosférico entre ΔDIC 0 y 0.02, como indican. Medio fresco: 10.39 contra 10.5 ajustado | Confiable. Constantes a 25 °C; Hcp provisional |
+
+**Conflicto registrado:** carbono en la biomasa: 50.6 % (F1, base libre de cenizas) contra 32 ± 4 % sobre peso seco (F10). Cambia la eficiencia del CO₂ hasta 1.6 veces. Pendiente decidir.
+
+**Datos de validación guardados para después (F10):** fotobiorreactor cilíndrico de 1 L (diámetro interno 106 mm), 300 µmol, 24 h de luz, 35 °C, tiempo de residencia 4.75 d: biomasa de 1.33 a 1.42 g/L y producción de 0.27 a 0.31 g L⁻¹ d⁻¹. La conversión de CO₂ absorbido a carbono biológico fue de 30 a 58 %.

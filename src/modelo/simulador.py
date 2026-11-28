@@ -105,3 +105,76 @@ def desempaquetar_genes(genes):
         "co2": g[:, N_BLOQUES + 2],
         "mezclado": g[:, N_BLOQUES + 3],
     }
+    
+
+def simular(genes, escenario, config=None, series=False):
+    """Simula el cultivo de cada individuo y devuelve sus objetivos."""
+    cfg = config or ConfigSimulacion()
+    g = desempaquetar_genes(genes)
+    N = g["luces"].shape[0]
+    dt = cfg.dt_h
+
+    pasos_dia = int(round(24.0 / dt))
+    n_pasos = cfg.dias * pasos_dia
+    inicio_eval = n_pasos - cfg.dias_eval * pasos_dia
+    pasos_bloque = int(round(HORAS_POR_BLOQUE / dt))
+    bloque_de_paso = (np.arange(n_pasos) // pasos_bloque) % N_BLOQUES
+
+    D_h = g["dilucion_d"] / 24.0
+    L_cm = g["espesor_cm"]
+    volumen_L = cfg.area_m2 * (L_cm / 100.0) * 1000.0
+    k = valor(escenario, "luz", "k_extincion")
+    i_inhibicion = valor(escenario, "luz", "i_inhibicion")
+
+    X = np.full(N, cfg.biomasa_inicial)
+    cosecha_gL = np.zeros(N)
+    energia_kwh = np.zeros(N)
+    estres = np.zeros(N)
+    violacion = np.zeros(N)
+    if series:
+        s_X = np.zeros((N, n_pasos))
+        s_q = np.zeros((N, n_pasos))
+        s_Iprom = np.zeros((N, n_pasos))
+        s_P = np.zeros((N, n_pasos))
+
+    for i in range(n_pasos):
+        q = g["luces"][:, bloque_de_paso[i]]
+        r = tasa_crecimiento(q, X, L_cm, cfg.T_C, escenario)
+        I_prom = luz_promedio(q, X, L_cm, k)
+        P_led = potencia_led(q, cfg.area_m2, escenario)
+
+        # Restricción de biomasa en todo momento (violación relativa, 0 si cumple)
+        fuera = (np.maximum(0.0, cfg.X_min - X) / cfg.X_min
+                 + np.maximum(0.0, X - cfg.X_max) / cfg.X_max)
+        violacion = np.maximum(violacion, fuera)
+
+        if i >= inicio_eval:
+            cosecha_gL += D_h * X * dt
+            energia_kwh += P_led * dt / 1000.0
+            I_estres = I_prom if cfg.base_estres == "promedio" else q
+            estres += np.maximum(0.0, I_estres - i_inhibicion) * dt * 3600.0
+
+        if series:
+            s_X[:, i], s_q[:, i], s_Iprom[:, i], s_P[:, i] = X, q, I_prom, P_led
+
+        X = np.maximum(X + (r - D_h * X) * dt, 0.0)
+
+    cosechado_g = cosecha_gL * volumen_L
+    resultado = ResultadoSimulacion(
+        productividad_biomasa=cosecha_gL / cfg.dias_eval,
+        energia_por_gramo=energia_kwh / (cosechado_g + cfg.delta_g),
+        eficiencia_co2=np.full(N, np.nan),
+        estres_luminico=estres,
+        violacion=violacion,
+        energia_led_kwh=energia_kwh,
+        energia_mezclado_kwh=np.zeros(N),
+        biomasa_cosechada_g=cosechado_g,
+        biomasa_final_gL=X,
+    )
+    if series:
+        resultado.series = {
+            "tiempo_h": np.arange(n_pasos) * dt,
+            "biomasa": s_X, "luz_incidente": s_q,
+            "luz_promedio": s_Iprom, "potencia_led_w": s_P,
+        }
+    return resultado

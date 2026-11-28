@@ -15,7 +15,8 @@ REQUERIDOS = {
     "luz": ["Ea", "Es", "b", "k_extincion", "i_comp", "i_inhibicion"],
     "crecimiento": ["rho_M", "K", "phi", "T_opt", "fT_A", "fT_E1", "fT_B",
                     "fT_E2", "pH_optimo"],
-    "carbono": ["masa_c_molar_biomasa", "fraccion_carbono_biomasa", "K_TIC"],
+        "carbono": ["masa_c_molar_biomasa", "fraccion_carbono_biomasa", "K_TIC",
+                    "pK1", "pK2", "Hcp", "dic_medio", "alcalinidad_medio"],
     "energia": ["eficacia_led", "conversion_par", "acople_optico"],
 }
 

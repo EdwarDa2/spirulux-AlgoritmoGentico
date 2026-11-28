@@ -105,7 +105,7 @@
         "fraccion_carbono_biomasa": {
             "valor": 0.506,
             "unidad": "g C g-1",
-            "fuente": "12.011 / 23.74, de la formula CH1.575O0.459N0.173S0.006P0.006 (Farges et al. 2009)",
+            "fuente": "12.011 / 23.74, de la formula CH1.575O0.459N0.173S0.006P0.006 (Farges et al. 2009). Es base libre de cenizas; Kishi et al. 2020 midieron 32 +/- 4 % sobre peso seco",
             "estado": "derivado"
         },
         "K_TIC": {
@@ -113,6 +113,36 @@
             "unidad": "mol C L-1",
             "fuente": "Poughon et al. 2021 (los autores advierten que es dificil obtener valores confiables)",
             "estado": "provisional"
+        },
+        "pK1": {
+            "valor": 6.38,
+            "unidad": "adimensional",
+            "fuente": "Kishi et al. 2020, Appl. Sci. 10:228 (valor tomado de Camacho Rubio et al. 1999, no abierto). Sin correccion por temperatura",
+            "estado": "literatura"
+        },
+        "pK2": {
+            "valor": 9.8,
+            "unidad": "adimensional",
+            "fuente": "Kishi et al. 2020 (obtenido por titulacion del medio SOT modificado; constante aparente de ese medio)",
+            "estado": "literatura"
+        },
+        "Hcp": {
+            "valor": 3.30e-7,
+            "unidad": "mol L-1 Pa-1",
+            "fuente": "Kishi et al. 2020, citando a Sander 2015 (no abierto). Valor a 25 C; el cultivo opera a 35 C",
+            "estado": "provisional"
+        },
+        "dic_medio": {
+            "valor": 0.27,
+            "unidad": "mol L-1",
+            "fuente": "Kishi et al. 2020 (medio SOT modificado: NaHCO3 22.68 g/L)",
+            "estado": "literatura"
+        },
+        "alcalinidad_medio": {
+            "valor": 0.485,
+            "unidad": "mol L-1",
+            "fuente": "c0 + cb = 0.27 + 0.215 mol/L (NaHCO3 mas NaOH que lleva el pH a 10.5), Kishi et al. 2020, ec. 5",
+            "estado": "derivado"
         }
     },
     "energia": {

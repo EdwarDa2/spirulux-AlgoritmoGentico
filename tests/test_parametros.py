@@ -113,3 +113,18 @@ def test_eficacia_led_dentro_de_los_limites_fisicos(escenario):
 
 def test_acople_optico_entre_cero_y_uno(escenario):
     assert 0 < valor(escenario, "energia", "acople_optico") <= 1.0
+    
+
+
+def test_constantes_de_acidez_en_orden_fisico(escenario):
+    # El primer protón del ácido carbónico se pierde antes que el segundo
+    assert valor(escenario, "carbono", "pK1") < valor(escenario, "carbono", "pK2")
+
+
+def test_alcalinidad_del_medio_supera_al_DIC(escenario):
+    # El medio lleva NaOH además del bicarbonato (alcalinidad = DIC + NaOH)
+    assert valor(escenario, "carbono", "alcalinidad_medio") > valor(escenario, "carbono", "dic_medio")
+
+
+def test_solubilidad_del_CO2_en_orden_de_magnitud(escenario):
+    assert 1e-7 < valor(escenario, "carbono", "Hcp") < 1e-6
